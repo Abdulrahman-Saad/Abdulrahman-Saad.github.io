@@ -21,47 +21,47 @@ This was the first step in the project. After understanding the business problem
 After gathering the data, I ended up with a large data frame as shown in the figure below.
 ![Image test]({{ site.url }}/images/dataf1.png)
 
-So, in this step I started by cleaning the data and here are some of the things I did: 
-•	Observing the plots of each feature and doing the necessary actions (e.g. box plot – remove the outliers).
-•	Check if there are null values.
-•	Check the levels of each categorical variable. (e.g. checking the levels of the currency – found out that there are multiple currencies while it should be one, so I had to unify them)
-After the data cleaning I started investigating the relationship between the variables by:
-•	Split the training and testing data sets.
-•	Observing the correlation (e.g. the carat had 0.91 correlation with the price).
+So, in this step I started by cleaning the data and here are some of the things I did:  
+•	Observing the plots of each feature and doing the necessary actions (e.g. box plot – remove the outliers).  
+•	Check if there are null values.  
+•	Check the levels of each categorical variable. (e.g. checking the levels of the currency – found out that there are multiple currencies while it should be one, so I had to unify them)  
+After the data cleaning I started investigating the relationship between the variables by:  
+•	Split the training and testing data sets.  
+•	Observing the correlation (e.g. the carat had 0.91 correlation with the price).  
 •	Observing the pair-wise plots. Here is an example in the figure below of one of the plots. It is between the carat and price and we can see that there is a linear relationship between them. And they might have a quadratic relationship. 
 
 ### Building the model
-After cleaning and investigating the data we can now build the model. The approach that will be used is an iterating approach. I am going to build a base line model and then will try to improve on it then I will choose the best model. And I will evaluate the model by looking into two things and they are:
-•	R-squared and Adj R-squared for each model (the higher the better)
-•	The residuals plot for each model (point centered around zero and has constant variance is the best case) 
+After cleaning and investigating the data we can now build the model. The approach that will be used is an iterating approach. I am going to build a base line model and then will try to improve on it then I will choose the best model. And I will evaluate the model by looking into two things and they are:  
+•	R-squared and Adj R-squared for each model (the higher the better)  
+•	The residuals plot for each model (point centered around zero and has constant variance is the best case)   
 
 #### Baseline model
 In this model I used only the numerical variable as my predictor (which is the carat) and used the price as my target. And I got the following result: 
-•	R-squared = 0.819 
-•	The residuals plot is shown in the figure below. And we can notice that the residuals are not evenly spread around zero and they have a non-constant variance
+•	R-squared = 0.819  
+•	The residuals plot is shown in the figure below. And we can notice that the residuals are not evenly spread around zero and they have a non-constant variance  
 ![Image test]({{ site.url }}/images/baseline1.png)
 
 #### The best model
 After trying multiple models this was the best one in terms of R-squared and residuals plot. This model is different from the baseline model in three things: 
-•	The carat value has been squared and added to a new column
-•	The color variable has been added to the model predictors
-•	The clarity variable has been added to the model predictors
+•	The carat value has been squared and added to a new column  
+•	The color variable has been added to the model predictors  
+•	The clarity variable has been added to the model predictors  
 Note that the color and clarity are categorical-ordinal variables, so I had to transform them into integers by using label encoding. I didn’t consider the cut and shape because their p-values were more than alpha (0.05). and I got the following results:
-•	R-squared = 0.932
-•	The residuals plot is shown in the figure below. And we can notice that the residuals are spread around zero, but they still have non-constant variance.
+•	R-squared = 0.932  
+•	The residuals plot is shown in the figure below. And we can notice that the residuals are spread around zero, but they still have non-constant variance.  
 ![Image test]({{ site.url }}/images/best_model1.png)
 
 ## Results
-In the results I am going test my best model with the testing data that I split earlier. First let’s see the equation of our model
-Price = -2814.11 + 1709.05*(carat) + 404.78*(color) + 305.27*(clarity) + 3972.92*(carat)2 
+In the results I am going test my best model with the testing data that I split earlier. First let’s see the equation of our model  
+Price = -2814.11 + 1709.05*(carat) + 404.78*(color) + 305.27*(clarity) + 3972.92*(carat)2  
 And when we apply this equation to the test data set. We get an R-squared = 0.92
 
 ## Limitations
-This model didn’t have all the levels of the categorical variables.
-•	Color have only (f, e, d, g and h) levels
-•	Clarity have only (VS1, VVS2, VVS1 and IF)
+This model didn’t have all the levels of the categorical variables.  
+•	Color have only (f, e, d, g and h) levels  
+•	Clarity have only (VS1, VVS2, VVS1 and IF)  
 
 ## Recommendations
-After finishing this project, I would recommend the following point to however work in similar project
+After finishing this project, I would recommend the following point to however work in similar project  
 •	Being careful by choosing the samples when scraping, to have a good model. So that you don’t need to over sample 
 
