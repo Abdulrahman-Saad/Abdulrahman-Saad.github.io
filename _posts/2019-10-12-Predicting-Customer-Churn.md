@@ -78,8 +78,8 @@ Boxplots have been drawn to see the five numbers (minimum, first quartile, media
 #### Percentages
 Status | Churned |  Didn't Churn
 ------------ | ------------- | -------------
-Has fiber optic | 70% | 35%
-No fiber optic | 30% | 65%
+Has fiber optic | 0.70 | 0.35
+No fiber optic | 0.30 | 0.65
 
 
 After looking at the percentages it seems that there is a high correlation between fiber optic service and the target. And it seems that there is problem with this service because it has high churn percentage
