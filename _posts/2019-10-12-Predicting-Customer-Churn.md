@@ -1,5 +1,5 @@
 ## Introduction
-Customers churn have been a concern to many companies throughout the years for many reasons. In this project customers churn problems will be discussed, analyzed and finally solutions will be delivered to help companies keep the customers churn rate as low as possible. 
+Customers churn have been a concern to many companies throughout the years for many reasons. In this project customers churn problems will be discussed, analyzed and finally, solutions will be delivered to help companies keep the customers churn rate as low as possible. 
 
 ### What is Customer Churn?  
 Customer churn term is often used in companies that provide services. And it refers to when a customer leaves a company that he was subscribed to or he was using their services. Here are some good examples to customer churn:  
@@ -77,7 +77,7 @@ Boxplots have been drawn to see the five numbers (minimum, first quartile, media
 
 #### Percentages
 Status | Churned | Didn't Churn  
------------- | -------------| -------------  
+------------ | ------------| ------------  
 Has fiber optic| 70%  | 35%  
 No fiber optic| 30%  | 65%  
 
